@@ -45,22 +45,23 @@ Transposition of the functional domain modeling into a database, producing a phy
 
 The analysis of the functional domain involves the development of the class diagram for the technical architecture of our project. The goal of the project is to model an IT system for managing pizzerias, so the functional domain is developed around three main classes:
 
-- SalesPoint: The place where pizza orders are registered and prepared.
-- Command: The record of the order and its information.
-- Client: The person who places an order at one of the group's pizzerias.
+- command: The record of the order and its information.
+- customer: The person who places an order at one of the group's pizzerias.
+- sales_point: The place where pizza orders are registered and prepared.
 
 The system requires a number of other classes:
-- Address: Adress of the client.
-- CommandStatus: Status of the command who permit the client to follow his command.
-- Invoice: Records payment information.
-- PaymentMethod: List of all payment solutions accepted by the group's pizzerias.
-- PaymentStatus: Status of payment.
-- Pizza: Pizzas that can be ordered by the client with their receipt.
-- Ingredient: The list of ingredients needed to make a pizza.
-- QuantityStock: The inventory of ingredients available for each point of sale.
-- Unity: List of unity types of the ingredients.
-- CommandMaker: Employes of the pizzerias who made the pizzas for the client.
-- DeliveryMan: Employes of the pizzerias who deliver the pizzas at the address of the client.
+- address: Adress of the customer.
+- command_status: Status of the command who permit the customer to follow his command.
+- invoice: Records payment information.
+- payment_method: List of all payment solutions accepted by the group's pizzerias.
+- payment_status: Status of payment.
+- pizza: Pizzas that can be ordered by the customer with their receipt.
+- ingredient: The list of ingredients needed to make a pizza.
+- quantity_stock: The inventory of ingredients available for each point of sale.
+- unity: List of unity types of the ingredients.
+- command_maker: Employes of the pizzerias who made the pizzas for the customer.
+- delivery_man: Employes of the pizzerias who deliver the pizzas at the address of the customer.
+- Daily_recipes: Daily revenues and expenses for each Sales point.
 
 ![Class diagram](Technical_specifications/class_diagram.png)
 
