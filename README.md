@@ -57,7 +57,7 @@ The system requires a number of other classes:
 - payment_status: Status of payment.
 - pizza: Pizzas that can be ordered by the customer with their receipt.
 - ingredient: The list of ingredients needed to make a pizza.
-- quantity_stock: The inventory of ingredients available for each point of sale.
+- unity_quantity_stock: The inventory of ingredients available for each point of sale.
 - unity_amount: amount of the ingredients.
 - unity_type: Unity types of the ingredients.
 
