@@ -51,17 +51,15 @@ The analysis of the functional domain involves the development of the class diag
 
 The system requires a number of other classes:
 - address: Adress of the customer.
+- employe: Employes of the pizzerias who made or deliver the pizzas for the customer.
 - command_status: Status of the command who permit the customer to follow his command.
-- invoice: Records payment information.
 - payment_method: List of all payment solutions accepted by the group's pizzerias.
 - payment_status: Status of payment.
 - pizza: Pizzas that can be ordered by the customer with their receipt.
 - ingredient: The list of ingredients needed to make a pizza.
 - quantity_stock: The inventory of ingredients available for each point of sale.
-- unity: List of unity types of the ingredients.
-- command_maker: Employes of the pizzerias who made the pizzas for the customer.
-- delivery_man: Employes of the pizzerias who deliver the pizzas at the address of the customer.
-- Daily_recipes: Daily revenues and expenses for each Sales point.
+- unity_amount: amount of the ingredients.
+- unity_type: Unity types of the ingredients.
 
 ![Class diagram](Technical_specifications/class_diagram.png)
 
