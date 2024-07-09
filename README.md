@@ -51,11 +51,12 @@ The analysis of the functional domain involves the development of the class diag
 
 The system requires a number of other classes:
 - address: Adress of the customer.
-- employe: Employes of the pizzerias who made or deliver the pizzas for the customer.
+- employe: Employes of the pizzerias who made or deliver the pizzas for the customer. (this class is divided between delivery_man and command_maker)
 - command_status: Status of the command who permit the customer to follow his command.
 - payment_method: List of all payment solutions accepted by the group's pizzerias.
 - payment_status: Status of payment.
 - pizza: Pizzas that can be ordered by the customer with their receipt.
+- command_pizza : Indication of the number of the same pizza in one command
 - ingredient: The list of ingredients needed to make a pizza.
 - unity_quantity_stock: The inventory of ingredients available for each point of sale.
 - unity_amount: amount of the ingredients.
@@ -70,6 +71,12 @@ The physical data model makes it possible to build the final structure of the da
 ![Relational model](Technical_specifications/relational_model.png)
 
 ## MySQL database
+
+Demo dataset inspired by fictional elements. The database was created using SQL line command and SQL workbench from the physical data model produced. The import of the data and the export of the data insertion script was carried out using SQL workbench.
+
+The database can be imported by these two SQL files:
+- [Script for database creation](sql_script/script_table.sql)
+- [Script for demonstration data](sql_script/oc_pizza.sql)
 
 ## Documentation
 
