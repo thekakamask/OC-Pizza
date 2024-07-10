@@ -155,11 +155,11 @@ VALUES
 
 INSERT INTO pizza (name, picture, selling_price, receipt)
 VALUES 
-('Margherita', 'margherita.jpg', 8.5, 'Tomato sauce, Mozzarella, Basil'),
-('Pepperoni', 'pepperoni.jpg', 10.0, 'Tomato sauce, Mozzarella, Pepperoni'),
-('Vegetarian', 'vegetarian.jpg', 9.5, 'Tomato sauce, Mozzarella, Vegetables'),
-('Hawaiian', 'hawaiian.jpg', 11.0, 'Tomato sauce, Mozzarella, Ham, Pineapple'),
-('BBQ Chicken', 'bbq_chicken.jpg', 12.0, 'BBQ sauce, Mozzarella, Chicken, Onion');
+('Margherita', 'margherita.jpg', 8.5, '0.6l of Tomato sauce, 0.6kg of Mozzarella, 10 unit of Basil'),
+('Pepperoni', 'pepperoni.jpg', 10.0, '0.4l of Tomato sauce, 0.2kg of Mozzarella, 0.5kg of Pepperoni'),
+('Vegetarian', 'vegetarian.jpg', 9.5, '0.5l of Tomato sauce, 0.5kg of Mozzarella, 0.7kg of Vegetables'),
+('Hawaiian', 'hawaiian.jpg', 11.0, '0.3l Tomato sauce, 0.4kg of Mozzarella, 0.2kg of Ham, 1 unit of Pineapple'),
+('BBQ Chicken', 'bbq_chicken.jpg', 12.0, '0.3l BBQ sauce, 0.2kg of Mozzarella, 0.5kg of Chicken, 0.2kg of Onion');
 
 INSERT INTO pizza_ingredient (id_pizza, id_ingredient)
 VALUES 
@@ -207,14 +207,14 @@ SELECT id_employe FROM employe WHERE fonction = 'Delivery Man';
 
 INSERT INTO command (date, delivery_hours, name, payment_amount, id_customer, id_command_status, id_payment_status, id_payment_method, id_command_maker, id_delivery_man)
 VALUES 
-('2023-07-01', 14, 'Order 1', 28.0, 1, 1, 1, 2, 1, 2),  -- John Doe, Paris Centre
+('2023-07-01', 14, 'Order 1', 28.0, 1, 1, 2, 2, 1, 2),  -- John Doe, Paris Centre
 ('2023-07-02', 13, 'Order 2', 8.5, 2, 2, 1, 3, 9, 10),   -- Jane Smith, Paris 8
 ('2023-07-03', 15, 'Order 3', 21.5, 3, 3, 3, 1, 7, 8),  -- Alice Johnson, Paris 5
 ('2023-07-04', 14, 'Order 4', 21.0, 4, 4, 3, 2, 5, 6),  -- Bob Brown, Bagnolet
-('2023-07-05', 13, 'Order 5', 10.0, 5, 5, 2, 3, 3, 4),  -- Charlie Davis, Puteaux
+('2023-07-05', 13, 'Order 5', 10.0, 5, 5, 3, 3, 3, 4),  -- Charlie Davis, Puteaux
 ('2023-07-06', 13, 'Order 6', 11.5, 1, 1, 3, 1, 1, 2),  -- John Doe, Paris Centre
 ('2023-07-07', 15, 'Order 7', 20.0, 2, 2, 3, 2, 9, 10), -- Jane Smith, Paris 8
-('2023-07-08', 14, 'Order 8', 24.5, 3, 5, 2, 1, 7, 8),  -- Alice Johnson, Paris 5
+('2023-07-08', 14, 'Order 8', 24.5, 3, 5, 3, 1, 7, 8),  -- Alice Johnson, Paris 5
 ('2023-07-09', 13, 'Order 9', 18.5, 4, 4, 3, 1, 5, 6),  -- Bob Brown, Bagnolet
 ('2023-07-10', 14, 'Order 10', 19.50, 5, 5, 3, 2, 3, 4); -- Charlie Davis, Puteaux
 
