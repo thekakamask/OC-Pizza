@@ -62,13 +62,13 @@ The system requires a number of other classes:
 - unity_amount: amount of the ingredients.
 - unity_type: Unity types of the ingredients.
 
-![Class diagram](Technical_specifications/class_diagram.png)
+![Class diagram](technical_specifications/class_diagram.png)
 
 ### Physical data model
 
 The physical data model makes it possible to build the final structure of the database with the different links between the elements that compose it. Attributes are always not null if it's not specified.
 
-![Relational model](Technical_specifications/relational_model.png)
+![Relational model](technical_specifications/relational_model.png)
 
 ## MySQL database
 
@@ -79,6 +79,18 @@ The database can be imported by these two SQL files:
 - [Script for demonstration data](sql_script/oc_pizza.sql)
 
 ## Documentation
+
+In this section you will find the managment documentation of the project. It will specifically addresses the project management framework, ensuring that a structured approach is provided to guide the project from start to finish. This presentation will walk you through the following elements:
+
+-	Methodology 
+A recommended project management methodology tailored to OC Pizza's requirements, supported by a comparative analysis of various methodologies. This ensures the selection of the most suitable approach for managing the project effectively.
+-	Macroplanning 
+A detailed macroplanning of the project using a Gantt chart to outline key milestones and delivery estimates. This provides a clear roadmap for the project’s progression, ensuring timely and organized execution.
+-	RACI Matrix 
+A clear definition of the roles and responsibilities of the project team members, ensuring effective communication and accountability throughout the project lifecycle.
+This document not only provides a blueprint for managing the project efficiently but also ensures all management aspects are covered to support the successful realization of the technical solution. 
+
+- [Project managment documentation](documentation/managment_documentation.pdf)
 
 
 
