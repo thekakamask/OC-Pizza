@@ -1,4 +1,3 @@
-
 -- Display all clients and their address
 SELECT 
     c.id_customer,
@@ -17,7 +16,6 @@ JOIN
     address a ON ca.id_address = a.id_address
 ORDER BY 
     c.id_customer;
-
 
 -- Display all orders with customers, order statuses, payment statuses, payment methods, and pizzas
 SELECT 
@@ -50,7 +48,6 @@ JOIN
 ORDER BY 
     co.id_command;
 
-
 -- Display sales points, their commands, customers, command makers, and delivery men, sorted by sales point id
 SELECT 
     sp.id_sales_point,
@@ -75,7 +72,6 @@ JOIN
 ORDER BY 
     sp.id_sales_point, co.id_command;
 
-
 -- Display employees and their locations
 SELECT 
     e.id_employe,
@@ -89,7 +85,6 @@ JOIN
     sales_point sp ON e.id_sales_point = sp.id_sales_point
 ORDER BY 
     e.id_employe;
-
 
 -- Display pizzas, their ingredients, and their receipt
 SELECT 
@@ -106,7 +101,6 @@ JOIN
 ORDER BY 
     p.id_pizza, i.id_ingredient;
 
-
 -- Display points of sale, ingredients, and stock quantities with unit types, grouped by sales point id
 SELECT 
     sp.id_sales_point,
@@ -114,7 +108,7 @@ SELECT
     uqs.name AS stock_name,
     uqs.limit_quantity,
     uqs.purchasing_price_per_unit,
-    ua.amount,
+    uqs.amount,
     ut.NAME AS unity_type,
     i.name AS ingredient_name
 FROM 
@@ -124,18 +118,15 @@ JOIN
 JOIN 
     ingredient i ON uqs.id_ingredient = i.id_ingredient
 JOIN 
-    unity_amount ua ON uqs.id_unity_amount = ua.id_unity_amount
-JOIN 
-    unity_type ut ON ua.id_unity_type = ut.id_unity_type
+    unity_type ut ON uqs.id_unity_type = ut.id_unity_type
 ORDER BY 
     sp.id_sales_point, i.id_ingredient;
-
 
 -- Display ingredients, their amounts, unit types, purchasing prices, stock names, and sales points
 SELECT 
     i.id_ingredient,
     i.name AS ingredient_name,
-    ua.amount,
+    uqs.amount,
     ut.NAME AS unity_type,
     uqs.purchasing_price_per_unit,
     uqs.name AS stock_name,
@@ -145,9 +136,7 @@ FROM
 JOIN 
     unity_quantity_stock uqs ON i.id_ingredient = uqs.id_ingredient
 JOIN 
-    unity_amount ua ON uqs.id_unity_amount = ua.id_unity_amount
-JOIN 
-    unity_type ut ON ua.id_unity_type = ut.id_unity_type
+    unity_type ut ON uqs.id_unity_type = ut.id_unity_type
 JOIN 
     sales_point sp ON uqs.id_sales_point = sp.id_sales_point
 ORDER BY 

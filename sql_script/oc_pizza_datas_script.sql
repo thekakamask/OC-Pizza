@@ -20,7 +20,7 @@ INSERT INTO customer_address (id_customer, id_address)
 VALUES 
 (1, 1), -- john doe rue de rivoli
 (2, 2), -- jane smith avenue champs elysees
-(3, 3), -- alice johnson  boulevard st germain
+(3, 3), -- alice johnson boulevard st germain
 (4, 4), -- bob brown avenue general de gaulle
 (5, 5), -- charlie davis rue jean jaures
 (1, 3), -- john doe boulevard st germain
@@ -52,24 +52,6 @@ VALUES
 ('l'),
 ('u');
 
-INSERT INTO unity_amount (amount, id_unity_type)
-VALUES 
-(5.0, 1),  -- 5 kg id 1
-(10.0, 2), -- 10 l id 2
-(20.0, 3), -- 20 unités id 3
-(2.5, 1),  -- 2.5 kg id 4
-(1.5, 2),  -- 1.5 l id 5 
-(20, 1),  -- 20 kg id 6 
-(40, 3),  -- 40 unités id 7
-(15.0, 1), -- 15 kg id 8 
-(8.0, 1),  -- 8 kg id 9 
-(5.5, 1),  -- 5.5 kg id 10
-(3.0, 2),  -- 3 l id 11 
-(18.0, 3), -- 18 unités id 12
-(12.0, 1), -- 12 kg id 13
-(25.0, 3), -- 25 unités id 14
-(7.5, 2);  -- 7.5 l id 15
-
 INSERT INTO ingredient (name)
 VALUES 
 ('Tomato Sauce'), -- id 1
@@ -91,67 +73,67 @@ VALUES
 ('Paris 5', 1),
 ('Paris 8', 1);
 
-INSERT INTO unity_quantity_stock (id_sales_point, id_ingredient, id_unity_amount, name, limit_quantity, purchasing_price_per_unit)
+INSERT INTO unity_quantity_stock (id_sales_point, id_ingredient, id_unity_type, name, amount, limit_quantity, purchasing_price_per_unit)
 VALUES 
-(1, 1, 2, 'Tomato Sauce Stock', 0, 2.0),  -- Paris Centre, Tomato Sauce, 10 l
-(2, 1, 15, 'Tomato Sauce Stock', 0, 2.0),  -- Bagnolet, Tomato Sauce, 7.5 l
-(3, 1, 11, 'Tomato Sauce Stock', 0, 2.0), -- Puteaux, Tomato Sauce, 3 l
-(4, 1, 15, 'Tomato Sauce Stock', 0, 2.0), -- Paris 5, Tomato Sauce, 7.5 l
-(5, 1, 2, 'Tomato Sauce Stock', 0, 2.0),  -- Paris 8, Tomato Sauce, 10 l
+(1, 1, 2, 'Tomato Sauce Stock', 10.0, 0, 2.0),  -- Paris Centre, Tomato Sauce, 10 l
+(2, 1, 2, 'Tomato Sauce Stock', 7.5, 0, 2.0),  -- Bagnolet, Tomato Sauce, 7.5 l
+(3, 1, 2, 'Tomato Sauce Stock', 3.0, 0, 2.0), -- Puteaux, Tomato Sauce, 3 l
+(4, 1, 2, 'Tomato Sauce Stock', 7.5, 0, 2.0), -- Paris 5, Tomato Sauce, 7.5 l
+(5, 1, 2, 'Tomato Sauce Stock', 10.0, 0, 2.0),  -- Paris 8, Tomato Sauce, 10 l
 
-(1, 2, 1, 'Mozzarella Stock', 0, 5.0),  -- Paris Centre, Mozzarella, 5 kg
-(2, 2, 6, 'Mozzarella Stock', 0, 5.0),  -- Bagnolet, Mozzarella, 20 kg
-(3, 2, 9, 'Mozzarella Stock', 0, 5.0),  -- Puteaux, Mozzarella, 8 kg
-(4, 2, 13, 'Mozzarella Stock', 0, 5.0), -- Paris 5, Mozzarella, 12 kg
-(5, 2, 8, 'Mozzarella Stock', 0, 5.0), -- Paris 8, Mozzarella, 15 kg
+(1, 2, 1, 'Mozzarella Stock', 5.0, 0, 5.0),  -- Paris Centre, Mozzarella, 5 kg
+(2, 2, 1, 'Mozzarella Stock', 20.0, 0, 5.0),  -- Bagnolet, Mozzarella, 20 kg
+(3, 2, 1, 'Mozzarella Stock', 8.0, 0, 5.0),  -- Puteaux, Mozzarella, 8 kg
+(4, 2, 1, 'Mozzarella Stock', 12.0, 0, 5.0), -- Paris 5, Mozzarella, 12 kg
+(5, 2, 1, 'Mozzarella Stock', 15.0, 0, 5.0), -- Paris 8, Mozzarella, 15 kg
 
-(1, 3, 1, 'Pepperoni Stock', 0, 15.0),  -- Paris Centre, Pepperoni, 5 kg
-(2, 3, 9, 'Pepperoni Stock', 0, 15.0),  -- Bagnolet, Pepperoni, 8 kg
-(3, 3, 13, 'Pepperoni Stock', 0, 15.0),  -- Puteaux, Pepperoni, 12 kg
-(4, 3, 8, 'Pepperoni Stock', 0, 15.0),  -- Paris 5, Pepperoni, 15 kg
-(5, 3, 6, 'Pepperoni Stock', 0, 15.0),  -- Paris 8, Pepperoni, 20 kg
+(1, 3, 1, 'Pepperoni Stock', 5.0, 0, 15.0),  -- Paris Centre, Pepperoni, 5 kg
+(2, 3, 1, 'Pepperoni Stock', 8.0, 0, 15.0),  -- Bagnolet, Pepperoni, 8 kg
+(3, 3, 1, 'Pepperoni Stock', 12.0, 0, 15.0),  -- Puteaux, Pepperoni, 12 kg
+(4, 3, 1, 'Pepperoni Stock', 15.0, 0, 15.0),  -- Paris 5, Pepperoni, 15 kg
+(5, 3, 1, 'Pepperoni Stock', 20.0, 0, 15.0),  -- Paris 8, Pepperoni, 20 kg
 
-(1, 4, 4, 'Vegetables Stock', 0, 4.5),  -- Paris Centre, Vegetables, 2.5 kg
-(2, 4, 9, 'Vegetables Stock', 0, 4.5),  -- Bagnolet, Vegetables, 8 kg
-(3, 4, 13, 'Vegetables Stock', 0, 4.5), -- Puteaux, Vegetables, 12 kg
-(4, 4, 8, 'Vegetables Stock', 0, 4.5), -- Paris 5, Vegetables, 15 kg
-(5, 4, 6, 'Vegetables Stock', 0, 4.5),  -- Paris 8, Vegetables, 20 kg
+(1, 4, 1, 'Vegetables Stock', 2.5, 0, 4.5),  -- Paris Centre, Vegetables, 2.5 kg
+(2, 4, 1, 'Vegetables Stock', 8.0, 0, 4.5),  -- Bagnolet, Vegetables, 8 kg
+(3, 4, 1, 'Vegetables Stock', 12.0, 0, 4.5), -- Puteaux, Vegetables, 12 kg
+(4, 4, 1, 'Vegetables Stock', 15.0, 0, 4.5), -- Paris 5, Vegetables, 15 kg
+(5, 4, 1, 'Vegetables Stock', 20.0, 0, 4.5),  -- Paris 8, Vegetables, 20 kg
 
-(1, 5, 4, 'Ham Stock', 0, 15.0),  -- Paris Centre, Ham, 2.5 kg
-(2, 5, 6, 'Ham Stock', 0, 15.0),  -- Bagnolet, Ham, 20 kg
-(3, 5, 13, 'Ham Stock', 0, 15.0), -- Puteaux, Ham, 12 kg
-(4, 5, 9, 'Ham Stock', 0, 15.0), -- Paris 5, Ham, 8 kg
-(5, 5, 8, 'Ham Stock', 0, 15.0),  -- Paris 8, Ham, 15 kg
+(1, 5, 1, 'Ham Stock', 2.5, 0, 15.0),  -- Paris Centre, Ham, 2.5 kg
+(2, 5, 1, 'Ham Stock', 20.0, 0, 15.0),  -- Bagnolet, Ham, 20 kg
+(3, 5, 1, 'Ham Stock', 12.0, 0, 15.0), -- Puteaux, Ham, 12 kg
+(4, 5, 1, 'Ham Stock', 8.0, 0, 15.0), -- Paris 5, Ham, 8 kg
+(5, 5, 1, 'Ham Stock', 15.0, 0, 15.0),  -- Paris 8, Ham, 15 kg
 
-(1, 6, 7, 'Pineapple Stock', 0, 7.0),  -- Paris Centre, Pineapple, 40 units
-(2, 6, 12, 'Pineapple Stock', 0, 7.0), -- Bagnolet, Pineapple, 18 units
-(3, 6, 14, 'Pineapple Stock', 0, 7.0), -- Puteaux, Pineapple, 25 units
-(4, 6, 3, 'Pineapple Stock', 0, 7.0), -- Paris 5, Pineapple, 20 units
-(5, 6, 12, 'Pineapple Stock', 0, 7.0), -- Paris 8, Pineapple, 18 units
+(1, 6, 3, 'Pineapple Stock', 40, 0, 7.0),  -- Paris Centre, Pineapple, 40 units
+(2, 6, 3, 'Pineapple Stock', 18, 0, 7.0), -- Bagnolet, Pineapple, 18 units
+(3, 6, 3, 'Pineapple Stock', 25, 0, 7.0), -- Puteaux, Pineapple, 25 units
+(4, 6, 3, 'Pineapple Stock', 20, 0, 7.0), -- Paris 5, Pineapple, 20 units
+(5, 6, 3, 'Pineapple Stock', 18, 0, 7.0), -- Paris 8, Pineapple, 18 units
 
-(1, 7, 8, 'Chicken Stock', 0, 15.0),  -- Paris Centre, Chicken, 15 kg
-(2, 7, 8, 'Chicken Stock', 0, 15.0),   -- Bagnolet, Chicken, 15 kg
-(3, 7, 13, 'Chicken Stock', 0, 15.0),  -- Puteaux, Chicken, 12 kg
-(4, 7, 1, 'Chicken Stock', 0, 15.0),   -- Paris 5, Chicken, 5 kg
-(5, 7, 13, 'Chicken Stock', 0, 15.0),  -- Paris 8, Chicken, 12 kg
+(1, 7, 1, 'Chicken Stock', 15.0, 0, 15.0),  -- Paris Centre, Chicken, 15 kg
+(2, 7, 1, 'Chicken Stock', 15.0, 0, 15.0),   -- Bagnolet, Chicken, 15 kg
+(3, 7, 1, 'Chicken Stock', 12.0, 0, 15.0),  -- Puteaux, Chicken, 12 kg
+(4, 7, 1, 'Chicken Stock', 5.0, 0, 15.0),   -- Paris 5, Chicken, 5 kg
+(5, 7, 1, 'Chicken Stock', 12.0, 0, 15.0),  -- Paris 8, Chicken, 12 kg
 
-(1, 8, 8, 'Onion Stock', 0, 15.0),  -- Paris Centre, Onion, 15 kg
-(2, 8, 13, 'Onion Stock', 0, 15.0),  -- Bagnolet, Onion, 12 kg
-(3, 8, 9, 'Onion Stock', 0, 15.0), -- Puteaux, Onion, 8 kg
-(4, 8, 4, 'Onion Stock', 0, 15.0), -- Paris 5, Onion, 2.5 kg
-(5, 8, 13, 'Onion Stock', 0, 15.0),  -- Paris 8, Onion, 12 kg
+(1, 8, 1, 'Onion Stock', 15.0, 0, 15.0),  -- Paris Centre, Onion, 15 kg
+(2, 8, 1, 'Onion Stock', 12.0, 0, 15.0),  -- Bagnolet, Onion, 12 kg
+(3, 8, 1, 'Onion Stock', 8.0, 0, 15.0), -- Puteaux, Onion, 8 kg
+(4, 8, 1, 'Onion Stock', 2.5, 0, 15.0), -- Paris 5, Onion, 2.5 kg
+(5, 8, 1, 'Onion Stock', 12.0, 0, 15.0),  -- Paris 8, Onion, 12 kg
 
-(1, 9, 3, 'Basil Stock', 0, 20.0),  -- Paris Centre, Basil, 20 units
-(2, 9, 12, 'Basil Stock', 0, 20.0),   -- Bagnolet, Basil, 18 units
-(3, 9, 14, 'Basil Stock', 0, 20.0),  -- Puteaux, Basil, 25 units
-(4, 9, 7, 'Basil Stock', 0, 20.0),  -- Paris 5, Basil, 40 units
-(5, 9, 3, 'Basil Stock', 0, 20.0),  -- Paris 8, Basil, 20 units
+(1, 9, 3, 'Basil Stock', 20, 0, 20.0),  -- Paris Centre, Basil, 20 units
+(2, 9, 3, 'Basil Stock', 18, 0, 20.0),   -- Bagnolet, Basil, 18 units
+(3, 9, 3, 'Basil Stock', 25, 0, 20.0),  -- Puteaux, Basil, 25 units
+(4, 9, 3, 'Basil Stock', 40, 0, 20.0),  -- Paris 5, Basil, 40 units
+(5, 9, 3, 'Basil Stock', 20, 0, 20.0),  -- Paris 8, Basil, 20 units
 
-(1, 10, 2, 'BBQ Sauce Stock', 0, 10.0),  -- Paris Centre, BBQ Sauce, 10 l
-(2, 10, 11, 'BBQ Sauce Stock', 0, 10.0),  -- Bagnolet, BBQ Sauce, 3 l
-(3, 10, 15, 'BBQ Sauce Stock', 0, 10.0), -- Puteaux, BBQ Sauce, 7.5 l
-(4, 10, 2, 'BBQ Sauce Stock', 0, 10.0), -- Paris 5, BBQ Sauce, 10 l
-(5, 10, 15, 'BBQ Sauce Stock', 0, 10.0); -- Paris 8, BBQ Sauce, 7.5 l
+(1, 10, 2, 'BBQ Sauce Stock', 10.0, 0, 10.0),  -- Paris Centre, BBQ Sauce, 10 l
+(2, 10, 2, 'BBQ Sauce Stock', 3.0, 0, 10.0),  -- Bagnolet, BBQ Sauce, 3 l
+(3, 10, 2, 'BBQ Sauce Stock', 7.5, 0, 10.0), -- Puteaux, BBQ Sauce, 7.5 l
+(4, 10, 2, 'BBQ Sauce Stock', 10.0, 0, 10.0), -- Paris 5, BBQ Sauce, 10 l
+(5, 10, 2, 'BBQ Sauce Stock', 7.5, 0, 10.0); -- Paris 8, BBQ Sauce, 7.5 l
 
 INSERT INTO pizza (name, picture, selling_price, receipt)
 VALUES 

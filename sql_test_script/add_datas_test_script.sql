@@ -61,8 +61,7 @@ VALUES
 -- Update stock for the first command (Puteaux)
 UPDATE unity_quantity_stock uqs
 JOIN ingredient i ON uqs.id_ingredient = i.id_ingredient
-JOIN unity_amount ua ON uqs.id_unity_amount = ua.id_unity_amount
-SET ua.amount = ua.amount - 
+SET uqs.amount = uqs.amount - 
   CASE
     WHEN i.name = 'Tomato Sauce' THEN 0.6 * 2 + 0.4 * 2  -- 2 Margherita (0.6l each) + 2 Pepperoni (0.4l each)
     WHEN i.name = 'Mozzarella' THEN 0.6 * 2 + 0.2 * 2  -- 2 Margherita (0.6kg each) + 2 Pepperoni (0.2kg each)
@@ -74,8 +73,7 @@ WHERE uqs.id_sales_point = 3 AND i.name IN ('Tomato Sauce', 'Mozzarella', 'Basil
 -- Update stock for the second command (Bagnolet)
 UPDATE unity_quantity_stock uqs
 JOIN ingredient i ON uqs.id_ingredient = i.id_ingredient
-JOIN unity_amount ua ON uqs.id_unity_amount = ua.id_unity_amount
-SET ua.amount = ua.amount - 
+SET uqs.amount = uqs.amount - 
   CASE
     WHEN i.name = 'Tomato Sauce' THEN 0.3 * 2  -- 2 Hawaiian (0.3l each)
     WHEN i.name = 'Mozzarella' THEN 0.4 * 2  -- 2 Hawaiian (0.4kg each)

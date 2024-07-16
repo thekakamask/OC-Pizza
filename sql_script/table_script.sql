@@ -323,37 +323,19 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `oc_pizza`.`unity_amount`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `oc_pizza`.`unity_amount` (
-  `id_unity_amount` BIGINT NOT NULL AUTO_INCREMENT,
-  `amount` FLOAT NULL DEFAULT NULL,
-  `id_unity_type` BIGINT NOT NULL,
-  PRIMARY KEY (`id_unity_amount`),
-  INDEX `id_unity_type` (`id_unity_type` ASC) VISIBLE,
-  CONSTRAINT `unity_amount_ibfk_1`
-    FOREIGN KEY (`id_unity_type`)
-    REFERENCES `oc_pizza`.`unity_type` (`id_unity_type`)
-    ON DELETE RESTRICT
-    ON UPDATE CASCADE)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
-
-
--- -----------------------------------------------------
 -- Table `oc_pizza`.`unity_quantity_stock`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `oc_pizza`.`unity_quantity_stock` (
   `id_sales_point` BIGINT NOT NULL,
   `id_ingredient` BIGINT NOT NULL,
-  `id_unity_amount` BIGINT NOT NULL,
+  `id_unity_type` BIGINT NOT NULL,
   `name` VARCHAR(50) NOT NULL,
+  `amount` FLOAT NULL DEFAULT NULL,
   `limit_quantity` TINYINT(1) NULL DEFAULT '0',
   `purchasing_price_per_unit` FLOAT NOT NULL,
   PRIMARY KEY (`id_sales_point`, `id_ingredient`),
   INDEX `id_ingredient` (`id_ingredient` ASC) VISIBLE,
-  INDEX `id_unity_amount` (`id_unity_amount` ASC) VISIBLE,
+  INDEX `id_unity_type` (`id_unity_type` ASC) VISIBLE,
   CONSTRAINT `unity_quantity_stock_ibfk_1`
     FOREIGN KEY (`id_sales_point`)
     REFERENCES `oc_pizza`.`sales_point` (`id_sales_point`)
@@ -364,15 +346,14 @@ CREATE TABLE IF NOT EXISTS `oc_pizza`.`unity_quantity_stock` (
     REFERENCES `oc_pizza`.`ingredient` (`id_ingredient`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
-  CONSTRAINT `unity_quantity_stock_ibfk_3`
-    FOREIGN KEY (`id_unity_amount`)
-    REFERENCES `oc_pizza`.`unity_amount` (`id_unity_amount`)
+  CONSTRAINT `unity_quantity_stock_ibfk_4`
+    FOREIGN KEY (`id_unity_type`)
+    REFERENCES `oc_pizza`.`unity_type` (`id_unity_type`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
-
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

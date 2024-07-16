@@ -59,7 +59,6 @@ The system requires a number of other classes:
 - command_pizza : Indication of the number of the same pizza in one command
 - ingredient: The list of ingredients needed to make a pizza.
 - unity_quantity_stock: The inventory of ingredients available for each point of sale.
-- unity_amount: amount of the ingredients.
 - unity_type: Unity types of the ingredients.
 
 ![Class diagram](Technical_specifications/class_diagram.png)
