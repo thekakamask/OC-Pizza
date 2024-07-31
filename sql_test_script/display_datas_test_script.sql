@@ -17,7 +17,7 @@ JOIN
 ORDER BY 
     c.id_customer;
 
--- Display all orders with customers, order statuses, payment statuses, payment methods, and pizzas
+-- Display all orders with customers, order statuses, payment statuses, payment methods, pizzas, and delivery addresses
 SELECT 
     co.id_command,
     co.date,
@@ -30,7 +30,12 @@ SELECT
     ps.status AS payment_status,
     pm.method AS payment_method,
     p.name AS pizza_name,
-    cp.quantity_same_pizza
+    cp.quantity_same_pizza,
+    a.number_of_street,
+    a.street,
+    a.postal_code,
+    a.city,
+    a.additional_information
 FROM 
     command co
 JOIN 
@@ -45,6 +50,8 @@ JOIN
     command_pizza cp ON co.id_command = cp.id_command
 JOIN 
     pizza p ON cp.id_pizza = p.id_pizza
+JOIN 
+    address a ON co.id_address = a.id_address
 ORDER BY 
     co.id_command;
 
@@ -86,12 +93,13 @@ JOIN
 ORDER BY 
     e.id_employe;
 
--- Display pizzas, their ingredients, and their receipt
+-- Display pizzas, their ingredients, and their receipt with amounts
 SELECT 
     p.id_pizza,
     p.name AS pizza_name,
     p.receipt AS pizza_receipt,
-    i.name AS ingredient_name
+    i.name AS ingredient_name,
+    pi.amount_by_pizza
 FROM 
     pizza p
 JOIN 

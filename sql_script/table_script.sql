@@ -129,6 +129,7 @@ CREATE TABLE IF NOT EXISTS `oc_pizza`.`command` (
   `id_payment_method` BIGINT NOT NULL,
   `id_command_maker` BIGINT NOT NULL,
   `id_delivery_man` BIGINT NOT NULL,
+  `id_address` BIGINT NOT NULL,
   PRIMARY KEY (`id_command`),
   INDEX `id_customer` (`id_customer` ASC) VISIBLE,
   INDEX `id_command_status` (`id_command_status` ASC) VISIBLE,
@@ -136,6 +137,7 @@ CREATE TABLE IF NOT EXISTS `oc_pizza`.`command` (
   INDEX `id_payment_status` (`id_payment_status` ASC) VISIBLE,
   INDEX `fk_command_maker` (`id_command_maker` ASC) VISIBLE,
   INDEX `fk_delivery_man` (`id_delivery_man` ASC) VISIBLE,
+  INDEX `id_address` (`id_address` ASC) VISIBLE,
   CONSTRAINT `command_ibfk_1`
     FOREIGN KEY (`id_customer`)
     REFERENCES `oc_pizza`.`customer` (`id_customer`)
@@ -161,7 +163,12 @@ CREATE TABLE IF NOT EXISTS `oc_pizza`.`command` (
     REFERENCES `oc_pizza`.`employe` (`id_employe`),
   CONSTRAINT `fk_delivery_man`
     FOREIGN KEY (`id_delivery_man`)
-    REFERENCES `oc_pizza`.`employe` (`id_employe`))
+    REFERENCES `oc_pizza`.`employe` (`id_employe`),
+  CONSTRAINT `fk_address`
+    FOREIGN KEY (`id_address`)
+    REFERENCES `oc_pizza`.`address` (`id_address`)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
@@ -279,6 +286,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `oc_pizza`.`pizza_ingredient` (
   `id_pizza` BIGINT NOT NULL,
   `id_ingredient` BIGINT NOT NULL,
+  `amount_by_pizza` FLOAT NOT NULL,
   PRIMARY KEY (`id_pizza`, `id_ingredient`),
   INDEX `id_ingredient` (`id_ingredient` ASC) VISIBLE,
   CONSTRAINT `pizza_ingredient_ibfk_1`

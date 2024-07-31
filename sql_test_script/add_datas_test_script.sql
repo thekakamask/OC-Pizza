@@ -31,9 +31,9 @@ VALUES
 
 -- Adding two commands for the new customer
 -- First command (Puteaux)
-INSERT INTO command (date, delivery_hours, name, payment_amount, id_customer, id_command_status, id_payment_status, id_payment_method, id_command_maker, id_delivery_man)
+INSERT INTO command (date, delivery_hours, name, payment_amount, id_customer, id_command_status, id_payment_status, id_payment_method, id_command_maker, id_delivery_man, id_address)
 VALUES 
-('2024-07-15', 12, 'Order 11', 37.0, @new_customer_id, 4, 3, 3, 5, 6);  -- Command Maker at Puteaux, Delivery Man at Puteaux
+('2024-07-15', 12, 'Order 11', 37.0, @new_customer_id, 4, 3, 3, 5, 6, @address_id_puteaux);  -- Command Maker at Puteaux, Delivery Man at Puteaux
 
 -- Recover id for first command
 SET @new_command_id_puteaux = LAST_INSERT_ID();
@@ -45,9 +45,9 @@ VALUES
 (@new_command_id_puteaux, 2, 2);  -- 2 Pepperoni
 
 -- Second command (Bagnolet)
-INSERT INTO command (date, delivery_hours, name, payment_amount, id_customer, id_command_status, id_payment_status, id_payment_method, id_command_maker, id_delivery_man)
+INSERT INTO command (date, delivery_hours, name, payment_amount, id_customer, id_command_status, id_payment_status, id_payment_method, id_command_maker, id_delivery_man, id_address)
 VALUES 
-('2024-07-16', 14, 'Order 12', 46.0, @new_customer_id, 5, 3, 2, 3, 4);  -- Command Maker à Bagnolet, Delivery Man à Bagnolet
+('2024-07-16', 14, 'Order 12', 46.0, @new_customer_id, 5, 3, 2, 3, 4, @address_id_bagnolet);  -- Command Maker à Bagnolet, Delivery Man à Bagnolet
 
 -- Recover id for second command
 SET @new_command_id_bagnolet = LAST_INSERT_ID();
